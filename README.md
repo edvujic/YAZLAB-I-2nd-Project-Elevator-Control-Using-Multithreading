@@ -4,11 +4,11 @@ The goal of the project:
 To control the influx of people in a mall using multithreading.
 
 Shoping Mall Features
-• The number of floors in the shopping mall is 5.
-• There are 5 elevators in total.
-• One of the elevators works continuously. The rest, according to the influx of customers is active or idle.
-• The maximum capacity of the elevators is 10.
-• The transition between floors in elevators is 200 ms.
+1. The number of floors in the shopping mall is 5.
+2. There are 5 elevators in total.
+3. One of the elevators works continuously. The rest, according to the influx of customers is active or idle.
+4. The maximum capacity of the elevators is 10.
+5. The transition between floors in elevators is 200 ms.
 
 
 
