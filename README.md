@@ -1,4 +1,4 @@
-# YAZLABI-2nd-Project-Elevator-Control-Using-Multithreading
+# YAZLAB-I-2nd-Project-Elevator-Control-Using-Multithreading
 
 The goal of the project:
 To control the influx of people in a mall using multithreading.
