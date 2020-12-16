@@ -13,14 +13,14 @@ Shoping Mall Features
 
 
 Features of the project components:
-1) Mall Login Thread: Randomly between [1-10] with 500 ms time intervals
+1) <b>Mall Login Thread</b>: Randomly between [1-10] with 500 ms time intervals
 allows a large number of customers to enter the shopping mall (Ground Floor). Customers enter into the elevator queue to go to a random floor (1-4).
-2) Mall Exit Thread: Randomly between [1-5] with 1000 ms time intervals
+2) <b>Mall Exit Thread</b>: Randomly between [1-5] with 1000 ms time intervals
 It enables a number of customers to exit the shopping mall (Ground Floor).
 Customers exit from a random floor (1-4) to the elevator queue to go to the ground floor.
 gets.
-3) Elevator Thread: Used to transfer customers.
-4) Control Thread: Controls the queues on floors. 
+3) <b>Elevator Thread</b>: Used to transfer customers.
+4) <b>Control Thread</b>: Controls the queues on floors. 
 In case the total number of customers exceeds 2 times the capacity of the elevator (20), new elevator will be activated.
 In case the total number of people waiting in the queue is below the elevator capacity, the active elevators turn off.
 
