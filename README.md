@@ -73,10 +73,6 @@ Contributions to this project are encouraged. Here's how to contribute:
    ```
 5. Submit a pull request.
 
-### License
-
-This project is licensed under the MIT License. See the LICENSE.md file for details.
-
 ### Acknowledgments
 
 Thanks to all contributors who have aided in the development of this project. It draws inspiration from real-world elevator systems and the complexities of their operations.
