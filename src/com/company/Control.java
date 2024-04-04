@@ -2,29 +2,28 @@ package com.company;
 
 import static com.company.Main.*;
 
+/**
+ * Represents a control mechanism for managing elevators in a building.
+ */
 public class Control implements Runnable {
 
     @Override
     public void run() {
         while (true) {
-            if (newElevatorNeeded()) { // true dönerse o zaman yeni bir asansör talep edilir
+            if (newElevatorNeeded()) {
                 int placeHolder = 4;
                 for (int i = 1; i < elevators.size(); i++) {
-                    if (elevators.get(i).mode.equals("IDLE")) { // "idle" durumunda olan asansör aranır
-                        placeHolder = i; // "idle"i olan asansörün kimliği tutulur
+                    if (elevators.get(i).mode.equals("IDLE")) {
+                        placeHolder = i;
                         break;
                     }
                 }
-                startNewLift(placeHolder, setDestination()); // yeni bir asansör çalıştırılır ve istikameti belirlenir
+                startNewLift(placeHolder, setDestination());
                 break;
-                // tüm katlardaki kişi sayısı 20'nin altında ise
             } else {
                 for (int i = 1; i < elevators.size(); i++) {
-                    // "active" durumunda olan asansör aranır
                     if (elevators.get(i).mode.equals("ACTIVE")) {
-                        // asansör, müşterileri indirene kadar çalışır
                         elevators.get(i).makeIdle = true;
-                        // indirdikten sonra durumu "idle" olur
                     }
                 }
                 break;
@@ -32,17 +31,17 @@ public class Control implements Runnable {
         }
     }
 
+    /**
+     * Checks if a new elevator is needed based on the number of people waiting on each floor.
+     * @return True if a new elevator is needed, false otherwise.
+     */
     public boolean newElevatorNeeded() {
-        // döndürecek değer
         boolean toBeReturned = false;
         for (int i = 0; i < floors.size(); i++) {
-            // kuyrukta bekleyen kişi sayısını hesaplaman için kullanılır
             int sum = 0;
             for (int j = 0; j < floors.get(i).waitingAtQueue.size(); j++) {
-                // kuyrukta bekleyen kişiler toplanır
                 sum += (Integer) floors.get(i).waitingAtQueue.get(j).get(0);
             }
-            // eğer herhangi bir kuyrukta kişi sayısı 20'den fazla ise o zaman döndürecek değer true yapılır
             if (sum >= 20) {
                 toBeReturned = true;
             }
@@ -51,8 +50,12 @@ public class Control implements Runnable {
         return toBeReturned;
     }
 
+    /**
+     * Sets the destination floor for the new elevator based on the number of people waiting on each floor.
+     * @return The destination floor number.
+     */
     public int setDestination() {
-        int destination = 0;  // döndürecek değeir
+        int destination = 0;
 
         for (int i = 0; i < floors.size(); i++) {
             int sum = 0;
@@ -60,7 +63,7 @@ public class Control implements Runnable {
                 sum += (Integer) floors.get(i).waitingAtQueue.get(j).get(0);
             }
             if (sum >= 20)
-                destination = i; // 20 kişiyi aşan kat numarası
+                destination = i;
             sum = 0;
         }
         return destination;

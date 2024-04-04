@@ -1,28 +1,84 @@
-# YAZLAB-I-2nd-Project-Elevator-Control-Using-Multithreading
+## Elevator Simulation Project
 
-The goal of the project:
-To control the influx of people in a mall using multithreading.
+### Description
 
-Shoping Mall Features
-1. The number of floors in the shopping mall is 5.
-2. There are 5 elevators in total.
-3. One of the elevators works continuously. The rest, according to the influx of customers is active or idle.
-4. The maximum capacity of the elevators is 10.
-5. The transition between floors in elevators is 200 ms.
+The Elevator Simulation Project emulates the operations of a multi-elevator system within a building. Its primary goal is to illustrate the principles of concurrency and synchronization in Java. The simulation manages multiple elevators servicing various floors and handles the movement of people entering and exiting on different floors.
 
+### Key Features
 
+- **Concurrent Operation**: Simulates the operation of multiple elevators concurrently.
+- **Passenger Handling**: Allows passengers to enter and exit elevators on different floors.
+- **Dynamic Movement**: Manages elevator direction and destination based on passenger requests.
+- **Capacity Management**: Tracks and ensures that each elevator doesn't exceed its passenger capacity.
+- **Basic User Interface**: Provides a simple user interface to visualize elevator states and waiting passengers on each floor.
 
-Features of the project components:
-1) <b>Mall Login Thread</b>: Randomly between [1-10] with 500 ms time intervals
-allows a large number of customers to enter the shopping mall (Ground Floor). Customers enter into the elevator queue to go to a random floor (1-4).
-2) <b>Mall Exit Thread</b>: Randomly between [1-5] with 1000 ms time intervals
-It enables a number of customers to exit the shopping mall (Ground Floor).
-Customers exit from a random floor (1-4) to the elevator queue to go to the ground floor.
-gets.
-3) <b>Elevator Thread</b>: Used to transfer customers.
-4) <b>Control Thread</b>: Controls the queues on floors. 
-In case the total number of customers exceeds 2 times the capacity of the elevator (20), new elevator will be activated.
-In case the total number of people waiting in the queue is below the elevator capacity, the active elevators turn off.
+### Getting Started
 
+#### Prerequisites
 
-<a href="https://ibb.co/PccpwMp"><img src="https://i.ibb.co/c665Dw5/ss2.jpg" alt="ss2" border="0"></a>
+- Java Development Kit (JDK) - version 8 or higher.
+
+#### Installation
+
+1. Clone the repository to your local machine:
+   ```sh
+   git clone https://github.com/your-username/elevator-simulation.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd elevator-simulation
+   ```
+
+#### Running the Simulation
+
+To run the simulation:
+1. Compile the Java source files:
+   ```sh
+   javac com/company/*.java
+   ```
+2. Execute the Main class:
+   ```sh
+   java com.company.Main
+   ```
+
+### Usage
+
+Upon running the simulation, you'll observe the status of each elevator and the floors being updated in real-time on the console. The simulation will continue to run indefinitely until manually stopped.
+
+### Architecture
+
+The project's organization includes:
+
+- **Main.java**: Entry point of the application, responsible for initializing the building, elevators, and passengers.
+- **Elevator.java**: Defines the behavior and attributes of the Elevator class.
+- **Exit.java**: Simulates passengers leaving the building from different floors.
+- **Floor.java**: Represents a building floor and manages the queue of passengers waiting for elevators.
+
+### Contributing
+
+Contributions to this project are encouraged. Here's how to contribute:
+
+1. Fork the repository.
+2. Create a new feature branch:
+   ```sh
+   git checkout -b feature/YourFeature
+   ```
+3. Commit your changes:
+   ```sh
+   git commit -m 'Add some feature'
+   ```
+4. Push the branch:
+   ```sh
+   git push origin feature/YourFeature
+   ```
+5. Submit a pull request.
+
+### License
+
+This project is licensed under the MIT License. See the LICENSE.md file for details.
+
+### Acknowledgments
+
+Thanks to all contributors who have aided in the development of this project. It draws inspiration from real-world elevator systems and the complexities of their operations.
+
+--- 
